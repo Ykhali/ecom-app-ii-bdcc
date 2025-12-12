@@ -1,6 +1,7 @@
 package com.example.khalidyoussef.billingservice.entities;
 
 import com.example.khalidyoussef.billingservice.model.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,6 +13,7 @@ public class ProductItem {
     private Long id;
     private String productId;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Bill bill;
     private int quantity;
     private double unitPrice;

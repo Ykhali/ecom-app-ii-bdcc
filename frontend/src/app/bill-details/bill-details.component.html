@@ -1,0 +1,36 @@
+<div class="container" style="padding-top: 2rem;">
+    <div class="card" *ngIf="bill">
+        <h2>Bill #{{bill.id}}</h2>
+        <p>Date: {{bill.billingDate | date}}</p>
+        <div style="margin-top: 2rem;">
+            <h3>Items</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                            Product ID</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                            Product Name</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                            Price</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                            Quantity</th>
+                        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                            Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pi of bill.productItems">
+                        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">{{pi.productId}}</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">{{pi.product?.name}}
+                        </td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${{pi.price}}</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">{{pi.quantity}}</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${{pi.price *
+                            pi.quantity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

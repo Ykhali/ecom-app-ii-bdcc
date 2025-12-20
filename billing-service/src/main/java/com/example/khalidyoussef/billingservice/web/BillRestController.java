@@ -22,7 +22,7 @@ public class BillRestController {
     private ProductRestClient productRestClient;
 
     @GetMapping(path = "/bills/{id}")
-    public Bill getBill(@PathVariable Long id){
+    public Bill getBill(@PathVariable Long id) {
         Bill bill = billRepository.findById(id).get();
         bill.setCustomer(customerRestClient.getCustomerById(bill.getCustomerId()));
         bill.getProductItems().forEach(productItem -> {
@@ -30,5 +30,10 @@ public class BillRestController {
 
         });
         return bill;
+    }
+
+    @GetMapping(path = "/bills/customer/{customerId}")
+    public List<Bill> getBillsByCustomer(@PathVariable Long customerId) {
+        return billRepository.findByCustomerId(customerId);
     }
 }

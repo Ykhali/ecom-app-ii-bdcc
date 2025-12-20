@@ -6,7 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerService {
-  private host = "http://localhost:8888/api/customers";
+  private host = "http://localhost:8888/customer-service/api/customers";
   public currentCustomer: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {

@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.inventoryService.getProducts().subscribe({
       next: (data) => {
-        this.products = data._embedded.products;
+        this.products = data._embedded ? data._embedded.products : [];
       },
       error: (err) => { console.error(err); }
     });

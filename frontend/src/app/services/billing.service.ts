@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BillingService {
-  private host = "http://localhost:8888/api/bills";
+  private host = "http://localhost:8888/billing-service/bills";
 
   constructor(private http: HttpClient) { }
 

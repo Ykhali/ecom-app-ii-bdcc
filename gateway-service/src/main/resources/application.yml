@@ -21,7 +21,6 @@ spring:
             allowedOrigins: "http://localhost:4200"
             allowedMethods: "*"
             allowedHeaders: "*"
-            allowCredentials: true
       routes:
         - id: r1
           uri: lb://CUSTOMER-SERVICE

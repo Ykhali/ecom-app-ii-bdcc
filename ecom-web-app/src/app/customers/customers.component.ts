@@ -23,4 +23,7 @@ export class CustomersComponent implements OnInit{
     })
   }
 
+  getOrders(c: any) {
+    
+  }
 }

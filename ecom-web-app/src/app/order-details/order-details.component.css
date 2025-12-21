@@ -1,0 +1,38 @@
+.invoice-card {
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+.invoice-table th {
+    background-color: #f8fafc;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.invoice-table td {
+    vertical-align: middle;
+}
+
+.customer-info {
+    border: 1px solid var(--border-color);
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .sidebar,
+    .navbar {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: none !important;
+    }
+}

@@ -25,9 +25,6 @@
         <module>config-service</module>
         <module>order-service</module>
         <module>kafka-spring-cloud-stream</module>
-        <module>chatbot_app</module>
-        <module>chatbot_app/ebank-service</module>
-        <module>chatbot_app/mcp-server</module>
-        <module>chatbot-service</module>
+
     </modules>
 </project>
